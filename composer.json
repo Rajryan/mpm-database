@@ -1,0 +1,22 @@
+{
+    "name": "mpm/database",
+    "description": "Provide Easy to use methods for CRUD work",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "mpm/utils": "^1.0",
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mpm\\Database\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "raaz maholia",
+            "email": "maholialekhraj46@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
