@@ -2,6 +2,7 @@
 namespace Mpm\Database;
 use Mpm\Utils\Utils;
 require "DatabaseException.php";
+require "DatabaseObjectException.php";
 
 
 class DB {
@@ -67,11 +68,16 @@ class DB {
   
   
   public static function connect($database=true){
-    $username = self::$dbObj->username;
-    $password = self::$dbObj->password;
-    $host     = self::$dbObj->host;
-    $port     = self::$dbObj->port;
-    $dbname   = self::$dbObj->dbname;
+    try {
+      if(!isset(self::$dbObj)) throw new DatabaseObjectException();
+      $username = self::$dbObj->username;
+      $password = self::$dbObj->password;
+      $host     = self::$dbObj->host;
+      $port     = self::$dbObj->port;
+      $dbname   = self::$dbObj->dbname;
+    } catch(DatabaseObjectException $e){
+      return null;
+    }
 
     if($database==true) 
       $conn  = mysqli_connect("$host:$port",$username,$password,$dbname);
