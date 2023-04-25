@@ -1,9 +1,6 @@
 <?php
 namespace Mpm\Database;
 use Mpm\Utils\Utils;
-require "DatabaseException.php";
-require "DatabaseObjectException.php";
-
 
 class DB {
   
@@ -321,5 +318,3 @@ class DB {
     return $data;
   }
 }
-
-DB::connect();
