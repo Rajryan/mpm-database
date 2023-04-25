@@ -1,6 +1,6 @@
 {
     "name": "mpm/database",
-    "description": "Provide Easy to use methods for CRUD work",
+    "description": "Provides Object Oriented approach  for CRUD tasks and execution of sql",
     "type": "library",
     "require": {
         "php": "^8.0",
